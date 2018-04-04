@@ -9,7 +9,7 @@
 #import "GoogleMaps.h"
 #import "MyPlgunProtocol.h"
 
-@interface Polyline : CDVPlugin<MyPlgunProtocol>
+@interface PolylineGM : CDVPlugin<MyPlgunProtocol>
 @property (nonatomic, strong) GoogleMapsViewController* mapCtrl;
 - (void)createPolyline:(CDVInvokedUrlCommand*)command;
 

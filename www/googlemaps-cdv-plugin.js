@@ -1145,7 +1145,7 @@ App.prototype.addPolyline = function(polylineOptions, callback) {
         if (typeof callback === "function") {
             callback.call(self, polyline, self);
         }
-    }, self.errorHandler, PLUGIN_NAME, 'exec', ['Polyline.createPolyline', self.deleteFromObject(polylineOptions,'function')]);
+    }, self.errorHandler, PLUGIN_NAME, 'exec', ['PolylineGM.createPolyline', self.deleteFromObject(polylineOptions,'function')]);
 };
 //-------------
 // Polygon
@@ -1682,21 +1682,21 @@ Polyline.prototype.setPoints = function(points) {
             "lng": points[i].lng
         });
     }
-    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['Polyline.setPoints', this.getId(), path]);
+    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['PolylineGM.setPoints', this.getId(), path]);
 };
 Polyline.prototype.getPoints = function() {
     return this.get("points");
 };
 Polyline.prototype.setColor = function(color) {
     this.set('color', color);
-    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['Polyline.setColor', this.getId(), HTMLColor2RGBA(color, 0.75)]);
+    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['PolylineGM.setColor', this.getId(), HTMLColor2RGBA(color, 0.75)]);
 };
 Polyline.prototype.getColor = function() {
     return this.get('color');
 };
 Polyline.prototype.setWidth = function(width) {
     this.set('width', width);
-    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['Polyline.setWidth', this.getId(), width]);
+    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['PolylineGM.setWidth', this.getId(), width]);
 };
 Polyline.prototype.getWidth = function() {
     return this.get('width');
@@ -1704,7 +1704,7 @@ Polyline.prototype.getWidth = function() {
 Polyline.prototype.setVisible = function(visible) {
     visible = parseBoolean(visible);
     this.set('visible', visible);
-    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['Polyline.setVisible', this.getId(), visible]);
+    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['PolylineGM.setVisible', this.getId(), visible]);
 };
 Polyline.prototype.getVisible = function() {
     return this.get('visible');
@@ -1712,20 +1712,20 @@ Polyline.prototype.getVisible = function() {
 Polyline.prototype.setGeodesic = function(geodesic) {
     geodesic = parseBoolean(geodesic);
     this.set('geodesic', geodesic);
-    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['Polyline.setGeodesic', this.getId(), geodesic]);
+    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['PolylineGM.setGeodesic', this.getId(), geodesic]);
 };
 Polyline.prototype.getGeodesic = function() {
     return this.get('geodesic');
 };
 Polyline.prototype.setZIndex = function(zIndex) {
     this.set('zIndex', zIndex);
-    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['Polyline.setZIndex', this.getId(), zIndex]);
+    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['PolylineGM.setZIndex', this.getId(), zIndex]);
 };
 Polyline.prototype.getZIndex = function() {
     return this.get('zIndex');
 };
 Polyline.prototype.remove = function() {
-    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['Polyline.remove', this.getId()]);
+    cordova.exec(null, this.errorHandler, PLUGIN_NAME, 'exec', ['PolylineGM.remove', this.getId()]);
     this.off();
 };
 
